@@ -1,37 +1,23 @@
 //test function for MyFunction
-function testFnForMyMap(arr){
-    var temp = [];
-    arr.forEach((element, index) => {
-        if(arr[index+1]){
-            element += ` => ${arr[index + 1]}\n`;
-            temp.push(element);
-        }
-    });
-    return temp;
+function sum(el){
+    return el*el;
 };
-
-function testFnForMyReduce(arr){
-    var temp = '';
-    arr.forEach((element =>{
-        if(element instanceof Array)
-            testFnForMyReduce(arr);
-        temp += +element;
-    }))
-    return temp;
-}
 
 //Function MyMap
-let array1 = ['Mark','Roma','dog','cat'];
+function myMap(array,Fn){
+    let result;
+    
+    if(array[0] instanceof String) result = '';
+        else result = 0;
+    array.forEach(element =>{
+        result += Fn(element);
+    });
 
-function MyMap(array,Fn){
-    return Fn(array);
+    return result;
 };
 
-//alert(MyMap(array1,testFnForMyMap));
+var array1 = [1,2,3,4,5];
+var array2 = ['1','2','3','4','5'];
 
-//Function MyReduce
-var test = [['a b'],['5 3'],['e f']];
-
-function MyReduce(arr, Fn){
-    return +Fn(arr);    
-}
+alert(myMap(array1,sum));
+alert(myMap(array2,sum));
