@@ -1,27 +1,26 @@
 //test data
 var array1 = [1,2,3,4,5];
 var array2 = ['1','2','3','4','5'];
-var array3 = ['']
+var array3 = ['a','b','c','d','e'];
+var array3 = [['a'],['b'],['c'],['d'],['e']];
+
 //Reduce
 function sum(el){
     return el*el;
 };
 
 function myReduce(array,Fn){
-    let result;
-    
-    if(array[0] instanceof String) result = '';
-        else result = 0;
+    let result = 0;
     array.forEach(element =>{
         result += Fn(element);
     });
 
     return result;
 };
-//alert(myReduce(array1,sum));
-//alert(myReduce(array2,sum));
 
-//myMap
+alert(myReduce(array2,sum));
+
+//Map
 function myMap(arr,Fn){
     let result = [];
     
@@ -32,20 +31,19 @@ function myMap(arr,Fn){
     return result;
 }  
 
-alert(myMap(array1,sum));
-alert(myMap(array2,sum));
-
+//alert(myMap(array1,sum));
+//alert(myMap(array2,sum));
+//myQuicksort
 function myQuicksort(arr){
     
-    var array = arr.split;
-    var temp, index = 0;
+    let array = arr.split;
+    let temp, index = 0;
 
-    while()
+    while(1){
         if(element[index] > element[index+1]){
-            temp = element;
-            element = element+1;
-            element+1=temp;
-
+            temp[index] = element[index];
+            element[index] = element[index+1];
+            element[index+1] = temp[index];
         }
-    
+    }
 };
