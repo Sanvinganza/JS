@@ -1,38 +1,40 @@
 //test data
-var array1 = [1,2,3,4,5];
+var array1 = document.getElementById('array');
+//[1,2,3,4,5];
 var array2 = ['1','2','3','4','5'];
 var array3 = ['a','b','c','d','e'];
 var array3 = [['a'],['b'],['c'],['d'],['e']];
 
-//Reduce
 function sum(el){
     return el*el;
 };
-
+//Reduce
 function myReduce(array,Fn){
     let result = 0;
+
     array.forEach(element =>{
         result += Fn(element);
     });
-
     return result;
 };
-
-alert(myReduce(array2,sum));
 
 //Map
 function myMap(arr,Fn){
     let result = [];
     
-    arr.forEach(element =>{
+    arr.forEach(element =>{ 
         result.push(Fn(element));
     });
-    
     return result;
-}  
+}
 
-//alert(myMap(array1,sum));
-//alert(myMap(array2,sum));
+document.getElementById("myMapButton").onclick = myMapController;
+
+function myMapController(){
+    var answer = myMap(array2,sum);
+    document.getElementById('answer').innerHTML = answer;
+};
+
 //myQuicksort
 function myQuicksort(arr){
     
