@@ -1,13 +1,16 @@
 //test data
-var array1 = document.getElementById('array');
-//[1,2,3,4,5];
+var array1 = [1,2,3,4,5];
 var array2 = ['1','2','3','4','5'];
 var array3 = ['a','b','c','d','e'];
 var array3 = [['a'],['b'],['c'],['d'],['e']];
+var array4 = [9,8,7,6,5,4,3,2,1,0];
+var array5 = [0,1,2,3,4,5,6,7,8,9];
+var array6 = [1,0,2,3,5,6,4];
 
 function sum(el){
     return el*el;
 };
+
 //Reduce
 function myReduce(array,Fn){
     let result = 0;
@@ -16,6 +19,11 @@ function myReduce(array,Fn){
         result += Fn(element);
     });
     return result;
+};
+
+function myReduceController(){
+    let answer = myReduce(array2,sum);
+    document.getElementById('answerMyReduce').innerHTML = answer;    
 };
 
 //Map
@@ -28,24 +36,30 @@ function myMap(arr,Fn){
     return result;
 }
 
-document.getElementById("myMapButton").onclick = myMapController;
-
 function myMapController(){
-    var answer = myMap(array2,sum);
-    document.getElementById('answer').innerHTML = answer;
+    let answer = myMap(array1,sum);
+    document.getElementById('answerMyMap').innerHTML = answer;
 };
 
-//myQuicksort
-function myQuicksort(arr){
-    
-    let array = arr.split;
-    let temp, index = 0;
-
-    while(1){
-        if(element[index] > element[index+1]){
-            temp[index] = element[index];
-            element[index] = element[index+1];
-            element[index+1] = temp[index];
+//myBubbleSort
+function mySort(array){
+    let temp = array[0], index = 0;
+    if(array instanceof Array){
+        let exit = 0;
+        while(exit != array.length){        
+            if(array[index] > array[index+1]){
+                [array[index],array[index+1]] = [array[index+1],array[index]];
+                exit = 0;
+            }else{
+                exit++;
+            }
+            index++;
         }
     }
+    return array;
+};
+
+function mySortController(){
+    let answer = mySort(array6);
+    document.getElementById('answerMySort').innerHTML = answer; 
 };
