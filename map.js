@@ -20,7 +20,7 @@ function myReduce(array,Fn){
     });
     return result;
 };
-
+//squares each number and displays their sum
 function myReduceController(){
     let answer = myReduce(array2,sum);
     document.getElementById('answerMyReduce').innerHTML = answer;    
@@ -41,7 +41,7 @@ function myMapController(){
     document.getElementById('answerMyMap').innerHTML = answer;
 };
 
-//myBubbleSort
+//mySort
 function mySort(array){
     let temp = array[0], index = 0;
     if(array instanceof Array){
@@ -59,6 +59,7 @@ function mySort(array){
     return array;
 };
 
+//squares each number
 function mySortController(){
     let answer = mySort(array6);
     document.getElementById('answerMySort').innerHTML = answer; 
