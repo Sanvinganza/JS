@@ -1,6 +1,6 @@
-var array6 = [1,0,2,3,4,6,5];
+let array6 = [1,0,2,3,5,6,4];
 
-//mySort
+//mySort(squares each number)
 function mySort(array){
     let temp = array[0], index = 0;
     if(array instanceof Array){
@@ -18,28 +18,13 @@ function mySort(array){
     return array;
 };
 
-let left = 0;
-let right = array.length;
-let key = 2;
-//binarySortIter
+function mySortController(){
+    alert('error');
+    let answer = mySort(array6);
+    document.getElementById('answerMySort').innerHTML = answer; 
+};
 
 /*
-function binarySortIter(array){
-    while(1){
-        let mid = left + (right - left) / 2;
-        if(array[mid] === key) return mid;
-        if(array[mid] > key) right = mid;
-            else left = mid + 1;
-    }
-    return array;
-}
-
-function binarySortIterController(){
-    let answer = binarySortIter(array6);
-    document.getElementById('answerBinarySortIter').innerHTML = answer;
-};
-*/
-
 //tree from binarySort
 let root = {
     left,
@@ -101,9 +86,4 @@ function treeController(){
     let answer = Tree(array6);
     document.getElementById('answerTree').innerHTML = answer; 
 };
-
-//squares each number
-function mySortController(){
-    let answer = mySort(array6);
-    document.getElementById('answerMySort').innerHTML = answer; 
-};
+*/

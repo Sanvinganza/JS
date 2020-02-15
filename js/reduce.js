@@ -8,9 +8,9 @@ function myReduce(array,Fn){
     });
     return result;
 };
+
 //squares each number and displays their sum
 function myReduceController(){
     let answer = myReduce(array2,sum);
     document.getElementById('answerMyReduce').innerHTML = answer;    
 };
-
