@@ -19,7 +19,6 @@ function mySort(array){
 };
 
 function mySortController(){
-    alert('error');
     let answer = mySort(array6);
     document.getElementById('answerMySort').innerHTML = answer; 
 };
