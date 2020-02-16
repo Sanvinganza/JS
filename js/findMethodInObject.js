@@ -13,12 +13,16 @@ function findMethodInObject(inputObject, inputArray){
 
     function rec(object,result, array){
         for(property in object){
-            if(object[property] == array) {result++;}
-            if(object[property] == "[object Object]")
-                result += rec(object[property], result, array);
-                alert('result = '+result);
-                alert("object[property] = "+object[property]);
+            if(object[property] != NaN || property != NaN){                    
+                if(object[property] == array) result++;
+                
+                if(object[property] == "[object Object]")
+                    result += rec(object[property], result, array);
+                    alert('property = ' +property +' object[property] = ' +object[property]);       
+                
+            }            
         }
+        return result;
     }
 
     rec(myTestObject, result, inputArray);
@@ -26,4 +30,4 @@ function findMethodInObject(inputObject, inputArray){
     return result;
 };
 
-alert(findMethodInObject(myTestObject, testArray));
+alert("result function = " +findMethodInObject(myTestObject, testArray));
