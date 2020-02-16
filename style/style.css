@@ -1,3 +1,9 @@
 .body{
     flex: inherit;
+    font-size: 16px;
+}
+
+.findArrayInObjectField{
+    display: list-item;
+    color: red;
 }

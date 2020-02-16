@@ -9,14 +9,14 @@ let myTestObject = {name: 'Harry', surname: 'Potter', age: 17,
 
 let testArray = 'Ron';
 
-function findMethodInObject(inputObject, inputArray){ 
+function findArrayInObject(inputObject, inputArray){ 
     let result = 0;
     array = inputArray;
 
     function rec(object, array){
         for(property in object){
             if(object[property] != NaN || property != NaN){
-                if(object[property] == array) {result++; alert('yes');}
+                if(object[property] == array) result++;
                 
                 if(object[property] == "[object Object]")
                     rec(object[property], array);                
@@ -27,6 +27,11 @@ function findMethodInObject(inputObject, inputArray){
     rec(myTestObject, inputArray);
 
     return result;
+};  
+function showInfo(){
+    alert('object = '+JSON.stringify(myTestObject)+'\n array = '+testArray);
+}
+function findArrayInObjectController(){
+    let answer = findArrayInObject(myTestObject, testArray);
+    document.getElementById('answerFindArrayInObject').innerHTML = answer; 
 };
-
-alert("result function = " +findMethodInObject(myTestObject, testArray));
