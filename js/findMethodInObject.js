@@ -4,46 +4,26 @@ let myTestObject = {name: 'Harry', surname: 'Potter', age: 17,
     }
 };
 
-let testObject = myTestObject,
-    testArray = 'Ron',
+let testArray = 'Ron',
     result = 0;
 
 function findMethodInObject(inputObject, inputArray){ 
-    let myObject = inputObject;
+    
+    array = inputArray;
 
-    for(property in myObject){
-        if(inputObject['property'] === "[Object Object]"){
-            findMethodInObject(property, myObject);
+    function rec(object,result, array){
+        for(property in object){
+            if(object[property] == array) {result++;}
+            if(object[property] == "[object Object]")
+                result += rec(object[property], result, array);
+                alert('result = '+result);
+                alert("object[property] = "+object[property]);
         }
-
-        if(myObject[property] === inputArray) result++;;
     }
 
-    return result;    
+    rec(myTestObject, result, inputArray);
+
+    return result;
 };
 
-alert(findMethodInObject(testObject, testArray));
-
-//stackoverflow
-function baseGet(object, path) {
-    path = path.split('.');
-  
-    var index = 0,
-        length = path.length;
-  
-    while (object != null && index < length) {
-      object = object[path[index++]];
-    }
-    return (index && index == length) ? object : undefined;
-};
-  
-let obj={"test":
-         {
-           "test1":{"key1":"val1"},
-           "test2":{"key2":"val2"}
-         }
-        };
-
-if(obj.test.test2.key2){
-    console.log('есть');
-}
+alert(findMethodInObject(myTestObject, testArray));
