@@ -1,37 +1,22 @@
-let myTestObject = {name: 'Harry', surname: 'Potter', age: 17, 
-    friend:{
-        name:'Ron', surname: 'Weasley'
-    },
-    classmate:{
-        name:'Ron', surname: 'Weasley'
-    }
-};
+(function () {
+    ARRAYHELPER = {
+        findArrayInObject: function (inputObject, inputArray) {
+            let result = 0;
 
-let testArray = 'Ron';
+            function rec(object, inputArray) {
+                for (property in object) {
+                    if (object[property] != NaN || property != NaN) {
+                        if (object[property] == inputArray) result++;
 
-function findArrayInObject(inputObject, inputArray){ 
-    let result = 0;
-    array = inputArray;
+                        if (object[property] == "[object Object]")
+                            rec(object[property], inputArray);
+                    }
+                }
+            }
 
-    function rec(object, array){
-        for(property in object){
-            if(object[property] != NaN || property != NaN){
-                if(object[property] == array) result++;
-                
-                if(object[property] == "[object Object]")
-                    rec(object[property], array);                
-            }            
+            rec(inputObject, inputArray);
+
+            return result;
         }
     }
-
-    rec(myTestObject, inputArray);
-
-    return result;
-};  
-function showInfo(){
-    alert('object = '+JSON.stringify(myTestObject)+'\n array = '+testArray);
-}
-function findArrayInObjectController(){
-    let answer = findArrayInObject(myTestObject, testArray);
-    document.getElementById('answerFindArrayInObject').innerHTML = answer; 
-};
+});

@@ -1,27 +1,24 @@
-let array6 = [1,0,2,3,5,6,4];
-
 //mySort(squares each number)
-function mySort(array){
-    let temp = array[0], index = 0;
-    if(array instanceof Array){
-        let exit,max = array.length;
-        for(exit = 0;exit < max;){      
-            if(array[index] > array[index+1]){
-                [array[index],array[index+1]] = [array[index+1],array[index]];
-                exit = 0;
-            }else{
-                exit++;
+(function () {
+    ARRAYHELPER = {
+        sort: function (array) {
+            let temp = array[0], index = 0;
+            if (array instanceof Array) {
+                let exit, max = array.length;
+                for (exit = 0; exit < max;) {
+                    if (array[index] > array[index + 1]) {
+                        [array[index], array[index + 1]] = [array[index + 1], array[index]];
+                        exit = 0;
+                    } else {
+                        exit++;
+                    }
+                    index++;
+                }
             }
-            index++;
+            return array;
         }
-    }
-    return array;
-};
-
-function mySortController(){
-    let answer = mySort(array6);
-    document.getElementById('answerMySort').innerHTML = answer; 
-};
+    };
+}());
 
 /*
 //tree from binarySort
