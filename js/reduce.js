@@ -1,6 +1,12 @@
+//import MYARRAYHELPER from './nameSpace.js';
+import test from './nameSpace.js';
+test()
+
 (function () {
-    window.MYAPP = {};
-    window.MYAPP.reduce = reduce;
+    MYARRAYHELPER = {
+        reduce: reduce
+    };
+
     function reduce(array, Fn) {
         let result = 0;
 
@@ -8,5 +14,8 @@
             result += Fn(element);
         });
         return result;
-    };
+    }
+
 });
+
+alert(MYARRAYHELPER.reduce('1,2,3',sum))

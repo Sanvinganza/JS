@@ -2,7 +2,9 @@ function mapController() {
     let answer = map(array1, sum);
     document.getElementById('answerMap').innerHTML = answer;
 };
+
 function sum(element) { return element ^ 2; };
+
 //squares each number and displays their sum
 function reduceController() {
     let answer = reduce(array2, sum);
