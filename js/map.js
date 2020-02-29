@@ -5,4 +5,4 @@ function map(arr,Fn){
         result.push(Fn(element));
     });
     return result;
-}
+} 

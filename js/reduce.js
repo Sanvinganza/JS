@@ -1,6 +1,6 @@
 //import MYARRAYHELPER from './nameSpace.js';
-import test from './nameSpace.js';
-test()
+//import test from './nameSpace.js';
+//test()
 
 (function () {
     MYARRAYHELPER = {
