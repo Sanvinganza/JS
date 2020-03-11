@@ -1,21 +1,15 @@
-//import MYARRAYHELPER from './nameSpace.js';
-//import test from './nameSpace.js';
-//test()
-
 (function () {
-    MYARRAYHELPER = {
-        reduce: reduce
-    };
+    if (window.ARRAYUTILS) {
+        window.ARRAYUTILS.reduce = (array, Fn) => {
+            let result = 0;
 
-    function reduce(array, Fn) {
-        let result = 0;
+            array.forEach(element => {
+                result += Fn(element);
+            });
 
-        array.forEach(element => {
-            result += Fn(element);
-        });
-        return result;
+            return result;
+        };
+    } else {
+        window.ARRAYUTILS = {};
     }
-
-});
-
-alert(MYARRAYHELPER.reduce('1,2,3',sum))
+})();

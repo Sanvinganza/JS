@@ -1,6 +1,6 @@
 (function () {
-    ARRAYHELPER = {
-        findArrayInObject: function (inputObject, inputArray) {
+    if (window.ARRAYUTILS) {
+        window.ARRAYUTILS = (inputObject, inputArray) => {
             let result = 0;
 
             function rec(object, inputArray) {
@@ -18,5 +18,7 @@
 
             return result;
         }
+    } else {
+        window.ARRAYUTILS = {};
     }
-});
+})();

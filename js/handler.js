@@ -24,3 +24,8 @@ function sortController() {
     let answer = sort(array6);
     document.getElementById('answerSort').innerHTML = answer;
 };
+
+function binarySearchController() {
+    let answer = binarySearch(arrayTest, testKey);
+    document.getElementById('answerBinarySearch').innerHTML = answer;
+};
